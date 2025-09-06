@@ -1,8 +1,8 @@
 package packet
 
 import (
-	"github.com/sandertv/gophertunnel/minecraft/nbt"
-	"github.com/sandertv/gophertunnel/minecraft/protocol"
+	"github.com/AmaseCocoa/gophertunnel/minecraft/nbt"
+	"github.com/AmaseCocoa/gophertunnel/minecraft/protocol"
 )
 
 // AddVolumeEntity sends a volume entity's definition and metadata from server to client.

@@ -3,8 +3,8 @@ package minecraft_test
 import (
 	"fmt"
 
-	"github.com/sandertv/gophertunnel/minecraft"
-	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
+	"github.com/AmaseCocoa/gophertunnel/minecraft"
+	"github.com/AmaseCocoa/gophertunnel/minecraft/protocol/packet"
 )
 
 func ExampleListen() {

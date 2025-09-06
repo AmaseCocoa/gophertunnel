@@ -6,11 +6,6 @@ import (
 	"crypto/rand"
 	"errors"
 	"fmt"
-	"github.com/sandertv/gophertunnel/minecraft/internal"
-	"github.com/sandertv/gophertunnel/minecraft/protocol"
-	"github.com/sandertv/gophertunnel/minecraft/protocol/login"
-	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
-	"github.com/sandertv/gophertunnel/minecraft/resource"
 	"log/slog"
 	"math"
 	"net"
@@ -18,6 +13,12 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/AmaseCocoa/gophertunnel/minecraft/internal"
+	"github.com/AmaseCocoa/gophertunnel/minecraft/protocol"
+	"github.com/AmaseCocoa/gophertunnel/minecraft/protocol/login"
+	"github.com/AmaseCocoa/gophertunnel/minecraft/protocol/packet"
+	"github.com/AmaseCocoa/gophertunnel/minecraft/resource"
 )
 
 // ListenConfig holds settings that may be edited to change behaviour of a Listener.
@@ -286,13 +287,15 @@ func (listener *Listener) createConn(netConn net.Conn) {
 	conn.disconnectOnUnknownPacket = !listener.cfg.AllowUnknownPackets
 	conn.disconnectOnInvalidPacket = !listener.cfg.AllowInvalidPackets
 
-	if listener.playerCount.Load() == int32(listener.cfg.MaximumPlayers) && listener.cfg.MaximumPlayers != 0 {
-		// The server was full. We kick the player immediately and close the connection.
-		_ = conn.WritePacket(&packet.PlayStatus{Status: packet.PlayStatusLoginFailedServerFull})
-		_ = conn.close(conn.closeErr("server full"))
-		return
-	}
-	listener.playerCount.Add(1)
+	/*
+		if listener.playerCount.Load() == int32(listener.cfg.MaximumPlayers) && listener.cfg.MaximumPlayers != 0 {
+			// The server was full. We kick the player immediately and close the connection.
+			_ = conn.WritePacket(&packet.PlayStatus{Status: packet.PlayStatusLoginFailedServerFull})
+			_ = conn.close(conn.closeErr("server full"))
+			return
+		}
+		listener.playerCount.Add(1)
+	*/
 	listener.updatePongData()
 
 	go listener.handleConn(conn)

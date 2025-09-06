@@ -1,6 +1,6 @@
 package packet
 
-import "github.com/sandertv/gophertunnel/minecraft/protocol"
+import "github.com/AmaseCocoa/gophertunnel/minecraft/protocol"
 
 const (
 	NPCRequestActionSetActions = iota

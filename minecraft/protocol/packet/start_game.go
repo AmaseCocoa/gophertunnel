@@ -1,10 +1,10 @@
 package packet
 
 import (
+	"github.com/AmaseCocoa/gophertunnel/minecraft/nbt"
+	"github.com/AmaseCocoa/gophertunnel/minecraft/protocol"
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/google/uuid"
-	"github.com/sandertv/gophertunnel/minecraft/nbt"
-	"github.com/sandertv/gophertunnel/minecraft/protocol"
 )
 
 const (

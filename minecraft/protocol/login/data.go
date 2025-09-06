@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/AmaseCocoa/gophertunnel/minecraft/protocol"
 	"github.com/google/uuid"
-	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"golang.org/x/text/language"
 )
 

@@ -1,10 +1,11 @@
 package packet
 
 import (
-	"github.com/go-gl/mathgl/mgl32"
 	"image/color"
 
-	"github.com/sandertv/gophertunnel/minecraft/protocol"
+	"github.com/go-gl/mathgl/mgl32"
+
+	"github.com/AmaseCocoa/gophertunnel/minecraft/protocol"
 )
 
 const (
